@@ -6,6 +6,8 @@ import shlex
 import hashlib
 import math
 import time
+import base64
+import zlib
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 
@@ -271,7 +273,7 @@ def handle_req_tracker(sock,peers_hostname,peers_port):
             try:
                 #handle request from tracker
                 # print("handle_req_tracker")
-                response_data = sock.recv(4096).decode()
+                response_data = sock.recv(4096).decode('utf-8')
                 if not response_data:
                     print("Server closed the connection.")
                     break
@@ -293,27 +295,37 @@ def handle_req_tracker(sock,peers_hostname,peers_port):
                                     else:
                                         print("my hostname:",peer)
                         elif response.get('action') == 'download-reply':
-                            # response = json.loads(sock.recv(4096).decode())
-                            if 'peers_info' in response:
-                                peers_info = response.get('peers_info', [])
-                                if not peers_info:
-                                    print("No hosts with the file available.")
-                                    
-                                else:
-                                    file_name = peers_info[0].get('file_name', None)
-                                    host_info_str = "\n".join([f"Number: {peer_info['num_order_in_file'] } {peer_info['peers_hostname']}/{peer_info['peers_ip']}:{peer_info['peers_port']} piece_hash: {peer_info['piece_hash']  } file_size: {peer_info['file_size']  } piece_size: {peer_info['piece_size']  } num_order_in_file: {peer_info['num_order_in_file'] }" for peer_info in peers_info])
-                                    print(f"Hosts with the file {file_name}:\n{host_info_str}")
+                            try:
+                                if 'peers_info' in response:
+                                    compressed_data = base64.b64decode(response['peers_info'])
+                                    peers_info = json.loads(zlib.decompress(compressed_data).decode('utf-8'))
+                                    print("Peers info:", peers_info)
+
+
+                                    if not peers_info:
+                                        print("No hosts with the file available.")
+                                    else:
+                                        file_name = peers_info[0].get('file_name', None)
+                                        for peer in peers_info:
+                                            try:
+                                                peer['piece_hash'] = base64.b64decode(peer['piece_hash']).decode('utf-8')
+                                            except base64.binascii.Error as e:
+                                                print(f"Error decoding base64 for piece_hash: {e}")  #Handle base64 decode errors
+                                                # Consider handling this by skipping the peer or taking other action
+                                            except KeyError:
+                                                print(f"Missing piece_hash key in peer data: {peer}") #handle missing key
+                                                #consider handling like skipping the peer
+
+                                        host_info_str = "\n".join([
+                                            f"Number: {peer_info['num_order_in_file'] } {peer_info['peers_hostname']}/{peer_info['peers_ip']}:{peer_info['peers_port']} "
+                                            f"piece_hash: {peer_info['piece_hash']} file_size: {peer_info['file_size']} "
+                                            f"piece_size: {peer_info['piece_size']} num_order_in_file: {peer_info['num_order_in_file']}"
+                                            for peer_info in peers_info
+                                        ])
+                                        print(f"Hosts with the file {file_name}:\n{host_info_str}")
                                     
                                     if len(peers_info) >= 1:
-                                        # chosen_info = input("Enter the number of piece of the host to download from: ")# choose the host, multiple hosts => fix auto choose
-                                        # chosen_info_part = shlex.split(chosen_info) #list piece choose
-                                        # # Find the host entry with the chosen IP to get the corresponding lname
-                                        # for i in chosen_info_part:
-                                        #     index = next((j for j, peer_info in enumerate(peers_info) if peer_info.get('num_order_in_file') == i), None)
-                                        #     if index is not None:
-                                        #         request_file_from_peer(peers_info[index]['peers_ip'], peers_info[index]['peers_port'], peers_info[index]['file_name'],peers_info[index]['piece_hash'],peers_info[index]['num_order_in_file'])
-                                        #     else:
-                                        #         print(f"Invalid number entered: {i}")
+                                    
                                         # Tính toán độ hiếm của mỗi piece
                                         piece_counts = defaultdict(list)  # Lưu {num_order_in_file: [peer_info_1, peer_info_2, ...]}
                                         for peer_info in peers_info:
@@ -327,13 +339,7 @@ def handle_req_tracker(sock,peers_hostname,peers_port):
                                                 peer_info = peers[0]
                                                 try:
                                                     print(f"Downloading rare piece {num_order_in_file} from Peer {peer_info['peers_hostname']} ({peer_info['peers_ip']}:{peer_info['peers_port']})...")
-                                                    # request_file_from_peer(
-                                                    #     peer_info['peers_ip'],
-                                                    #     peer_info['peers_port'],
-                                                    #     peer_info['file_name'],
-                                                    #     peer_info['piece_hash'],
-                                                    #     peer_info['num_order_in_file']
-                                                    # )
+                                                    
                                                     executor.submit(download_piece, peer_info, num_order_in_file)
                                                     print(f"Successfully downloaded piece {num_order_in_file}.")
                                                 except Exception as e:
@@ -347,16 +353,19 @@ def handle_req_tracker(sock,peers_hostname,peers_port):
                                         
                                     else:
                                         print("No hosts have the file.")
-                            else:
-                                print("No peers have the file or the response format is incorrect.")
-                                error = response.get('error')
-                                if error:
-                                    print("Message from tracker:", error)
-
+                                else:
+                                    print("No peers have the file or the response format is incorrect.")
+                                    error = response.get('error')
+                                    if error:
+                                        print("Message from tracker:", error)
+                            except zlib.error as e:
+                                print(f"Error decompressing peers_info: {e}")   
+                            
                         elif response.get('action') == 'request_file_list':
                             handle_file_list_request(sock)
                         with condition:
                             condition.notify()
+                        
                     except json.JSONDecodeError:
                         print(f"Invalid JSON received: {response_data}")
 
