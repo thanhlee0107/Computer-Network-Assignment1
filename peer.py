@@ -431,7 +431,18 @@ def main(server_host, server_port, peers_port):
 
 if __name__ == "__main__":
     # Replace with your server's IP address and port number
-    SERVER_HOST = '192.168.56.100'
-    SERVER_PORT = 65432
-    CLIENT_PORT = 65437
-    main(SERVER_HOST, SERVER_PORT,CLIENT_PORT)
+    # TRACKER_HOST = '192.168.56.100'
+    # TRACKER_PORT = 65432
+    # PEER_PORT = 65437
+    while True:
+        try:
+            TRACKER_HOST = input("Enter the TRACKER IP address: ").strip()
+            TRACKER_PORT = int(input("Enter the TRACKER port: ").strip())
+            PEER_PORT = int(input("Enter the peer (PEER) port: ").strip())
+            if TRACKER_PORT < 1 or TRACKER_PORT > 65535 or PEER_PORT < 1 or PEER_PORT > 65535:
+                raise ValueError("Port must be between 1 and 65535.")
+            break
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please try again.")
+
+    main(TRACKER_HOST, TRACKER_PORT,PEER_PORT)

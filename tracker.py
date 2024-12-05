@@ -285,11 +285,20 @@ def start_server(host='0.0.0.0', port=65432):
         server_socket.close()
 
 if __name__ == "__main__":
-    SERVER_HOST = '192.168.56.100'
-    SERVER_PORT = 65432
+    # TRACKER_HOST = '192.168.56.100'
+    # TRACKER_PORT = 65432
+    while True:
+        try:
+            TRACKER_HOST = input("Enter the server IP address (leave blank for 0.0.0.0): ").strip() or "0.0.0.0"
+            TRACKER_PORT = int(input("Enter the server port: ").strip())
+            if TRACKER_PORT < 1 or TRACKER_PORT > 65535:
+                raise ValueError("Port must be between 1 and 65535.")
+            break
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please try again.")
 
     # Start server in a separate thread
-    server_thread = threading.Thread(target=start_server, args=(SERVER_HOST, SERVER_PORT))
+    server_thread = threading.Thread(target=start_server, args=(TRACKER_HOST, TRACKER_PORT))
     server_thread.start()
 
     # Start the server command shell in the main thread
