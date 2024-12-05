@@ -203,11 +203,11 @@ def client_handler(conn, addr):
                                 "file_name": file_name
                             })
 
-                print("num order in file:", num_order_in_file)
+                # print("num order in file:", num_order_in_file)
                 # Lọc bỏ những piece không hợp lệ (có piece_hash là None)
                 requested_pieces = [piece for piece in requested_pieces if piece["piece_hash"] is not None]
                 #Check 
-                print(f"Filtered requested_pieces: {requested_pieces}")
+                # print(f"Filtered requested_pieces: {requested_pieces}")
                 
                 # Lọc danh sách peer đang trực tuyến
                 filtered_results = [
@@ -215,7 +215,7 @@ def client_handler(conn, addr):
                     if (peer['peers_ip'], peer['peers_port']) in host_files_online
                 ]
                 # In ra filtered results để debug
-                print(f"Filtered results (online peers): {filtered_results}")
+                # print(f"Filtered results (online peers): {filtered_results}")
 
                 # Mã hóa piece_hash của từng peer
                 for peer in filtered_results:
@@ -223,7 +223,7 @@ def client_handler(conn, addr):
 
                 # Tạo phản hồi
                 response = {'action': 'download-reply'}
-                print("file name requested information:", requested_pieces)
+                # print("file name requested information:", requested_pieces)
                 if filtered_results:
                     # Nén và mã hóa thông tin
                     compressed_peers_info = zlib.compress(json.dumps(filtered_results).encode('utf-8'))
