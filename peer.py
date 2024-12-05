@@ -301,7 +301,6 @@ def handle_req_tracker(sock,peers_hostname,peers_port):
                                     peers_info = json.loads(zlib.decompress(compressed_data).decode('utf-8'))
                                     print("Peers info:", peers_info)
 
-
                                     if not peers_info:
                                         print("No hosts with the file available.")
                                     else:

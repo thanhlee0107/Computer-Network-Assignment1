@@ -1,0 +1,131 @@
+{
+    "info": {
+        "file_name": "Chapter1.pdf",
+        "file_size": 4581703,
+        "piece_size": 524288
+    },
+    "peers": [
+        {
+            "ip": "192.168.56.100",
+            "port": 65438,
+            "hostname": "QuangThanhLee",
+            "pieces": [
+                {
+                    "piece_number": 1,
+                    "piece_hash": "b\"\\xb6\\xbf}\\xb0\\xa6\\xd0\\x13\\x8a4\\xe1,\\xf5\\xfcO'\\xc5`\\xd6:\\xf1\""
+                },
+                {
+                    "piece_number": 3,
+                    "piece_hash": "b'\\xf5\\x8a\\x84\\xadT\\r&\\xea\\xf6\\r\\xa7\\xc2\\x96H\\x109\\xb9\\xfd\\xe6_'"
+                },
+                {
+                    "piece_number": 5,
+                    "piece_hash": "b'\\x93\\xad\\xae\\xce\\xb3\\x90\\xce\\xc0\\x17\\xf1l\\x04\\xd3\\xaf\\xf4\\x1cH\\xbcA\\xab'"
+                },
+                {
+                    "piece_number": 7,
+                    "piece_hash": "b'\\x8a\\xe2\\xd7\\xdb\\xec\\xd9|\\xa9\\xb9p\\xb0\\xd3A\\xd9\\xed\\x00IM\\xff\\x89'"
+                },
+                {
+                    "piece_number": 9,
+                    "piece_hash": "b'\\x01jT\\xe8\\x0c\\xd1\\xaf\\xc3f\\xa7@\\x7f\\xecx\\xbd\\xcav\\x07.\\x00'"
+                },
+                {
+                    "piece_number": 1,
+                    "piece_hash": "b\"\\xb6\\xbf}\\xb0\\xa6\\xd0\\x13\\x8a4\\xe1,\\xf5\\xfcO'\\xc5`\\xd6:\\xf1\""
+                },
+                {
+                    "piece_number": 2,
+                    "piece_hash": "b'@\\x8b1\\xaa3\\xd8\\x9b\\xe6\\xf9\\xdb\\x154b\\xcdgXIm\\xb2\\x9f'"
+                },
+                {
+                    "piece_number": 3,
+                    "piece_hash": "b'\\xf5\\x8a\\x84\\xadT\\r&\\xea\\xf6\\r\\xa7\\xc2\\x96H\\x109\\xb9\\xfd\\xe6_'"
+                },
+                {
+                    "piece_number": 4,
+                    "piece_hash": "b'yR\\xb5\\xe5B+\\xd7Rf\\x10\\x01\\x01\\xac\\xdb\\x80\\xd4\\xba\\xb8\\x14U'"
+                },
+                {
+                    "piece_number": 5,
+                    "piece_hash": "b'\\x93\\xad\\xae\\xce\\xb3\\x90\\xce\\xc0\\x17\\xf1l\\x04\\xd3\\xaf\\xf4\\x1cH\\xbcA\\xab'"
+                },
+                {
+                    "piece_number": 6,
+                    "piece_hash": "b'\\x06\\x9a\\xdc\\t(\\xb9p\\x8cO2\\x8f\\x9e\\x87\\xfb\\x8ba\\xe8[\\xc90'"
+                },
+                {
+                    "piece_number": 7,
+                    "piece_hash": "b'\\x8a\\xe2\\xd7\\xdb\\xec\\xd9|\\xa9\\xb9p\\xb0\\xd3A\\xd9\\xed\\x00IM\\xff\\x89'"
+                },
+                {
+                    "piece_number": 8,
+                    "piece_hash": "b'\\xef4}\\x19b\\x02\\x08\\xf0\\x86\\x87\\xed\\xb2\\xf0\\x9a\\xab6#\\xac~\\x8f'"
+                },
+                {
+                    "piece_number": 9,
+                    "piece_hash": "b'\\x01jT\\xe8\\x0c\\xd1\\xaf\\xc3f\\xa7@\\x7f\\xecx\\xbd\\xcav\\x07.\\x00'"
+                }
+            ]
+        },
+        {
+            "ip": "192.168.56.100",
+            "port": 65437,
+            "hostname": "QuangThanhLee",
+            "pieces": [
+                {
+                    "piece_number": 2,
+                    "piece_hash": "b'@\\x8b1\\xaa3\\xd8\\x9b\\xe6\\xf9\\xdb\\x154b\\xcdgXIm\\xb2\\x9f'"
+                },
+                {
+                    "piece_number": 4,
+                    "piece_hash": "b'yR\\xb5\\xe5B+\\xd7Rf\\x10\\x01\\x01\\xac\\xdb\\x80\\xd4\\xba\\xb8\\x14U'"
+                },
+                {
+                    "piece_number": 6,
+                    "piece_hash": "b'\\x06\\x9a\\xdc\\t(\\xb9p\\x8cO2\\x8f\\x9e\\x87\\xfb\\x8ba\\xe8[\\xc90'"
+                },
+                {
+                    "piece_number": 8,
+                    "piece_hash": "b'\\xef4}\\x19b\\x02\\x08\\xf0\\x86\\x87\\xed\\xb2\\xf0\\x9a\\xab6#\\xac~\\x8f'"
+                },
+                {
+                    "piece_number": 1,
+                    "piece_hash": "b\"\\xb6\\xbf}\\xb0\\xa6\\xd0\\x13\\x8a4\\xe1,\\xf5\\xfcO'\\xc5`\\xd6:\\xf1\""
+                },
+                {
+                    "piece_number": 2,
+                    "piece_hash": "b'@\\x8b1\\xaa3\\xd8\\x9b\\xe6\\xf9\\xdb\\x154b\\xcdgXIm\\xb2\\x9f'"
+                },
+                {
+                    "piece_number": 3,
+                    "piece_hash": "b'\\xf5\\x8a\\x84\\xadT\\r&\\xea\\xf6\\r\\xa7\\xc2\\x96H\\x109\\xb9\\xfd\\xe6_'"
+                },
+                {
+                    "piece_number": 4,
+                    "piece_hash": "b'yR\\xb5\\xe5B+\\xd7Rf\\x10\\x01\\x01\\xac\\xdb\\x80\\xd4\\xba\\xb8\\x14U'"
+                },
+                {
+                    "piece_number": 5,
+                    "piece_hash": "b'\\x93\\xad\\xae\\xce\\xb3\\x90\\xce\\xc0\\x17\\xf1l\\x04\\xd3\\xaf\\xf4\\x1cH\\xbcA\\xab'"
+                },
+                {
+                    "piece_number": 6,
+                    "piece_hash": "b'\\x06\\x9a\\xdc\\t(\\xb9p\\x8cO2\\x8f\\x9e\\x87\\xfb\\x8ba\\xe8[\\xc90'"
+                },
+                {
+                    "piece_number": 7,
+                    "piece_hash": "b'\\x8a\\xe2\\xd7\\xdb\\xec\\xd9|\\xa9\\xb9p\\xb0\\xd3A\\xd9\\xed\\x00IM\\xff\\x89'"
+                },
+                {
+                    "piece_number": 8,
+                    "piece_hash": "b'\\xef4}\\x19b\\x02\\x08\\xf0\\x86\\x87\\xed\\xb2\\xf0\\x9a\\xab6#\\xac~\\x8f'"
+                },
+                {
+                    "piece_number": 9,
+                    "piece_hash": "b'\\x01jT\\xe8\\x0c\\xd1\\xaf\\xc3f\\xa7@\\x7f\\xecx\\xbd\\xcav\\x07.\\x00'"
+                }
+            ]
+        }
+    ]
+}

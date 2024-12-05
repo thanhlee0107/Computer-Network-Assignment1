@@ -1,0 +1,103 @@
+{
+    "info": {
+        "file_name": "Chapter2.pdf",
+        "file_size": 4953576,
+        "piece_size": 524288
+    },
+    "peers": [
+        {
+            "ip": "192.168.56.100",
+            "port": 65438,
+            "hostname": "QuangThanhLee",
+            "pieces": [
+                {
+                    "piece_number": 1,
+                    "piece_hash": "b'\\x189\\x82\\xab.\\nG*hk)\\xe6\\xe3\\xc6&\\xb4\\xd5\\xd0@\\xd6'"
+                },
+                {
+                    "piece_number": 2,
+                    "piece_hash": "b'\\xe7\\xf1\\xcf\\xe3\\xc3\\x19\\xa4qDq\\xa3D\\xd8\\x7f\\xf4\\xda\\x96L\\xee\\xdb'"
+                },
+                {
+                    "piece_number": 3,
+                    "piece_hash": "b'\\x83\\xaf\\xb2\\xe0\\x08\\x82\\x88\\x812\\xe9\\xf2D*\\xac/?\\xee\\x1f\\x19\\xc2'"
+                },
+                {
+                    "piece_number": 4,
+                    "piece_hash": "b'r\\x8e\\xdd\\xa3aV\\xed\\x95Z\\xceh^\\x0e\\xd0\\xdf\\x11\\x8f#\\x9dc'"
+                },
+                {
+                    "piece_number": 5,
+                    "piece_hash": "b'\\xbf\\x1a2|\\xf2-\\x8b\\x7f\\t\\x90h\\xf4c\\x0b\\x1c\\x8e\\x00\\x02C\\xc4'"
+                },
+                {
+                    "piece_number": 6,
+                    "piece_hash": "b'\\xef%\\x9a\\x90S|\\x00\\xd1\\x86\\xfb\\xb9\\xa5\\x15P\\x1fl\\x01lT\\x8c'"
+                },
+                {
+                    "piece_number": 7,
+                    "piece_hash": "b'KK\\x83\\x8f\\xd4\\x9aj\\xaa\\xf7.\\xfa\\xcc\\xa9p2(\\xd9\\xc3\\xde\\x10'"
+                },
+                {
+                    "piece_number": 8,
+                    "piece_hash": "b'\\x8c\\xba\\xf6\\xcd\\xfc\\x81;\\xbdH(\\xcf!\\xc4\\x7f\\xf6DR\\x88\\x0f\\x1a'"
+                },
+                {
+                    "piece_number": 9,
+                    "piece_hash": "b'\\x93v\\xdaj3\\xf9\\xf54:\\xc6:\\xf8\\x1c1\\xee\\xd8V\\x819\\x9b'"
+                },
+                {
+                    "piece_number": 10,
+                    "piece_hash": "b'\\xdd[*)\\xe7[\\xdc>mn\\xa0\\xb8\\xfd\\x8dn1\\x10\\x17\\xe3\\xf5'"
+                }
+            ]
+        },
+        {
+            "ip": "192.168.56.100",
+            "port": 65437,
+            "hostname": "QuangThanhLee",
+            "pieces": [
+                {
+                    "piece_number": 1,
+                    "piece_hash": "b'\\x189\\x82\\xab.\\nG*hk)\\xe6\\xe3\\xc6&\\xb4\\xd5\\xd0@\\xd6'"
+                },
+                {
+                    "piece_number": 2,
+                    "piece_hash": "b'\\xe7\\xf1\\xcf\\xe3\\xc3\\x19\\xa4qDq\\xa3D\\xd8\\x7f\\xf4\\xda\\x96L\\xee\\xdb'"
+                },
+                {
+                    "piece_number": 3,
+                    "piece_hash": "b'\\x83\\xaf\\xb2\\xe0\\x08\\x82\\x88\\x812\\xe9\\xf2D*\\xac/?\\xee\\x1f\\x19\\xc2'"
+                },
+                {
+                    "piece_number": 4,
+                    "piece_hash": "b'r\\x8e\\xdd\\xa3aV\\xed\\x95Z\\xceh^\\x0e\\xd0\\xdf\\x11\\x8f#\\x9dc'"
+                },
+                {
+                    "piece_number": 5,
+                    "piece_hash": "b'\\xbf\\x1a2|\\xf2-\\x8b\\x7f\\t\\x90h\\xf4c\\x0b\\x1c\\x8e\\x00\\x02C\\xc4'"
+                },
+                {
+                    "piece_number": 6,
+                    "piece_hash": "b'\\xef%\\x9a\\x90S|\\x00\\xd1\\x86\\xfb\\xb9\\xa5\\x15P\\x1fl\\x01lT\\x8c'"
+                },
+                {
+                    "piece_number": 7,
+                    "piece_hash": "b'KK\\x83\\x8f\\xd4\\x9aj\\xaa\\xf7.\\xfa\\xcc\\xa9p2(\\xd9\\xc3\\xde\\x10'"
+                },
+                {
+                    "piece_number": 8,
+                    "piece_hash": "b'\\x8c\\xba\\xf6\\xcd\\xfc\\x81;\\xbdH(\\xcf!\\xc4\\x7f\\xf6DR\\x88\\x0f\\x1a'"
+                },
+                {
+                    "piece_number": 9,
+                    "piece_hash": "b'\\x93v\\xdaj3\\xf9\\xf54:\\xc6:\\xf8\\x1c1\\xee\\xd8V\\x819\\x9b'"
+                },
+                {
+                    "piece_number": 10,
+                    "piece_hash": "b'\\xdd[*)\\xe7[\\xdc>mn\\xa0\\xb8\\xfd\\x8dn1\\x10\\x17\\xe3\\xf5'"
+                }
+            ]
+        }
+    ]
+}
