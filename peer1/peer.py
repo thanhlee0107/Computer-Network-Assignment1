@@ -410,12 +410,13 @@ def main(server_host, server_port, peers_port):
                         handle_publish_piece(sock, peers_port, pieces, file_name, file_size, piece_size)
                     else:
                         print(f"Local file {file_name}/piece does not exist.")
-            elif len(command_parts) == 2 and command_parts[0].lower() == 'download':
-                _, file_name = command_parts
-                pieces = check_local_piece_files(file_name)
-                pieces_hash = [] if not pieces else create_pieces_string(pieces)
-                num_order_in_file= [] if not pieces else [item.split("_")[-1][5:] for item in pieces]
-                fetch_file(sock,peers_port,file_name, pieces_hash,num_order_in_file)
+            elif len(command_parts) >= 2 and command_parts[0].lower() == 'download':
+                file_names = command_parts[1:]  # Lấy danh sách file cần tải xuống
+                for file_name in file_names:
+                    pieces = check_local_piece_files(file_name)
+                    pieces_hash = [] if not pieces else create_pieces_string(pieces)
+                    num_order_in_file = [] if not pieces else [item.split("_")[-1][5:] for item in pieces]
+                    fetch_file(sock, peers_port, file_name, pieces_hash, num_order_in_file)
             elif user_input.lower() == 'exit':
                 stop_event.set()  # Stop the host service thread
                 send_exit_signal(sock,socket.gethostname(),peers_port)
